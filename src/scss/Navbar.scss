@@ -1,0 +1,124 @@
+.nav_left img {
+  width: 50px;
+}
+.nav_right img {
+  width: 50px;
+}
+.nav_mid ul {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  list-style: none;
+  font-size: 22px;
+  li {
+    padding: 0 10px;
+    cursor: pointer;
+  }
+}
+
+.row {
+  position: relative;
+}
+.nav_right .btnLogin {
+  position: absolute;
+  top: 0;
+  right: 150px;
+}
+.nav_right .btn {
+  position: absolute;
+  top: 0;
+  right: 50px;
+}
+@media (max-width: 720px) {
+  .nav_left img {
+    width: 40px;
+  }
+  .row {
+    position: relative;
+  }
+  .nav_right .btn {
+    opacity: 0;
+  }
+  .nav_right .btnLogin {
+    position: absolute;
+    top: 0;
+    right: 50px;
+  }
+  .nav_mid ul {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    list-style: none;
+    font-size: 18px;
+    li {
+      padding: 0 10px;
+      cursor: pointer;
+    }
+  }
+}
+@media screen and (max-width: 500px) {
+  .row {
+    position: relative;
+  }
+  .nav_mid ul {
+    position: absolute;
+    top: -30px;
+    left: 60px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    list-style: none;
+    font-size: 15px;
+    li {
+      padding: 0 5px;
+      cursor: pointer;
+    }
+  }
+}
+@media (max-width: 500px) {
+  .nav_right .btnLogin {
+    position: absolute;
+    top: -37px;
+    right: 12px;
+  }
+}
+@media (max-width: 575px) {
+  .nav_right .btnLogin {
+    position: absolute;
+    top: -39px;
+    right: 12px;
+  }
+  .row {
+    position: relative;
+  }
+
+  .nav_mid ul {
+    position: absolute;
+    top: -30px;
+    left: 50px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    list-style: none;
+    font-size: 18px;
+    li {
+      padding: 0 10px;
+      cursor: pointer;
+    }
+  }
+}
+@media (max-width: 575px) {
+  .nav_mid ul li {
+    padding: 0px 5px;
+    margin-left: 20px;
+    cursor: pointer;
+    font-size: 18px;
+    margin-left: 17px;
+  }
+}
+@media (max-width: 720px) {
+  .nav_mid ul li {
+    padding: 0px 8px;
+    cursor: pointer;
+  }
+}

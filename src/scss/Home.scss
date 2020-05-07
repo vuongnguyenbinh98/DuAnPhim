@@ -1,0 +1,30 @@
+.list {
+  font-size: 40px;
+
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+.image {
+  width: 160px;
+  height: 300px;
+}
+.nameOfFilm {
+  font-size: 15px;
+}
+.card {
+  margin: 10px 5px;
+}
+.card-body {
+  height: 130px;
+  button {
+    background-color: #e82625;
+  }
+  button:hover {
+    background-color: white;
+    color: #e82625;
+  }
+}
+.card:hover {
+  cursor: pointer;
+}
