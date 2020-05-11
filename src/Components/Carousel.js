@@ -9,7 +9,7 @@ export default class Carousel extends Component {
         className="carousel slide w3-card-4"
         data-ride="carousel"
       >
-        <div className="carousel-inner abc">
+        <div className="carousel-inner abc edf">
           <div className="carousel-item active img-fluid">
             <img src="./imgCarousel/maxresdefault.jpg" className="" alt="" />
           </div>
