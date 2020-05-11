@@ -10,20 +10,20 @@ export default class Carousel extends Component {
         data-ride="carousel"
       >
         <div className="carousel-inner">
-          <div className="carousel-item active">
+          <div className="carousel-item active img-fluid">
             <img src="./imgCarousel/maxresdefault.jpg" className="" alt="" />
           </div>
           <div className="carousel-item">
             <img
               src="./imgCarousel/batman.jpg"
-              className="d-block w-100"
+              className="d-block w-100 img-fluid"
               alt=""
             />
           </div>
           <div className="carousel-item">
             <img
               src="./imgCarousel/Mad-Max.png"
-              className="d-block w-100"
+              className="d-block w-100 img-fluid"
               alt=""
             />
           </div>
