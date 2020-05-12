@@ -38,7 +38,7 @@ export default class Home extends Component {
     });
   };
   componentDidMount() {
-    this.makeHttpRequestWithPage(10);
+    this.makeHttpRequestWithPage(8);
   }
 
   render() {
@@ -47,17 +47,25 @@ export default class Home extends Component {
     console.log(this.state.users);
     if (this.state.users !== null) {
       users = this.state.users.map((user) => (
-        <div className="col-sm-3">
-          <div className="card">
-            <img className="card-img-top image" src={user.hinhAnh} alt="" />
+        //test
+        <div className="col-lg-3 col-md-6 col-sm-12 dadyCard">
+          <div className="card" style={{ width: "15rem" }}>
+            <img
+              src={user.hinhAnh}
+              className="card-img-top img-fluid"
+              style={{ width: "100%" }}
+              alt="..."
+            />
             <div className="card-body">
-              <h4 className="card-title nameOfFilm">{user.tenPhim}</h4>
-              <NavLink className="btn" to={`/detail-film/${user.maPhim}`}>
-                Xem thêm
-              </NavLink>
+              <h1 className="card-title">{user.tenPhim}</h1>
+              <div className="buy">
+                <NavLink to={`/detail-film/${user.maPhim}`}>Mua vé</NavLink>
+              </div>
             </div>
           </div>
         </div>
+
+        //end test
       ));
     }
 
@@ -90,10 +98,40 @@ export default class Home extends Component {
       <div>
         <Carousel />
         <div className={styles.app}>
-          <div className="contaier ">
+          {/* <div className="contaier">
             <div className="row">{users}</div>
-          </div>
+          </div> */}
+          {/* test */}
+          <section id="lichchieu" className="film">
+            <div className="film__content">
+              <ul className="nav nav-pills navMe">
+                <li className="nav-item">
+                  <a
+                    className="nav-link active"
+                    data-toggle="pill"
+                    href="#home"
+                  >
+                    Đang Chiếu
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a className="nav-link" data-toggle="pill" href="#menu1">
+                    Sắp Chiếu
+                  </a>
+                </li>
+              </ul>
+              <div className="tab-content">
+                <div className="tab-pane container active" id="home">
+                  <div className="row">{users}</div>
+                </div>
+                <div className="tab-pane container fade" id="menu1">
+                  <div className="row">{users}</div>
+                </div>
+              </div>
+            </div>
+          </section>
 
+          {/* endtest */}
           {/* <div className={styles.pagination}>
             <span onClick={() => this.makeHttpRequestWithPage(1)}>&laquo;</span>
             {renderPageNumbers}

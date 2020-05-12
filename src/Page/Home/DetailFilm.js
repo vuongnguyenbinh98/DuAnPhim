@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import * as action from "./../../redux/Action";
 import { connect } from "react-redux";
+import "../../scss/Home.scss";
 
 class DetailFilm extends Component {
   componentDidMount() {
