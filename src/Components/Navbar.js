@@ -32,7 +32,7 @@ export default class Navbar extends Component {
             <nav>
               <ul className="nav-links">
                 <li>
-                  <NavLink className="active" to="#lichchieu">
+                  <NavLink className="active" to="/">
                     Lịch chiếu
                   </NavLink>
                 </li>
