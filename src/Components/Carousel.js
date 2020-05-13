@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "../scss/Carousel.scss";
+import { NavLink } from "react-router-dom";
 
 export default class Carousel extends Component {
   render() {

@@ -26,7 +26,9 @@ export default class Navbar extends Component {
         </div>
         <div className="content">
           <div className="content__logo">
-            <img src="./img/logo/web-logo.png" />
+            <NavLink to="/">
+              <img src="/img/logo/web-logo.png" />
+            </NavLink>
           </div>
           <div className="content__menu">
             <nav>
@@ -51,12 +53,12 @@ export default class Navbar extends Component {
           <div className="content__right">
             <div className="content__right__login">
               <a href="#">
-                <img src="./img/logo/avatar.png" />
+                <img src="/img/logo/avatar.png" />
                 <p>Đăng nhập</p>
               </a>
             </div>
             <div className="content__right__dropdown">
-              <img src="img/logo/location-header.png" />
+              <img src="/img/logo/location-header.png" />
               <div className="content__right__dropdown__select">
                 <select
                   name
