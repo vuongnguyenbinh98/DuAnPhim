@@ -1,16 +1,16 @@
-import Home from "./Page/Home/Home";
+import Index from "./Page/Home";
 import DetailFilm from "./Page/Home/DetailFilm";
 
 const routesHome = [
   {
     path: "/",
     exact: true,
-    component: Home,
+    component: Index,
   },
   {
     path: "/home",
     exact: false,
-    component: Home,
+    component: Index,
   },
 
   {
