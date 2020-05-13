@@ -35,9 +35,9 @@ export default class Navbar extends Component {
             <nav>
               <ul className="nav-links">
                 <li>
-                  <NavLink className="active" to="">
+                  <a className="active" to="" href="#lichFilm">
                     Lịch chiếu
-                  </NavLink>
+                  </a>
                 </li>
                 <li>
                   <NavLink to="#">Cụm rạp</NavLink>
@@ -54,8 +54,10 @@ export default class Navbar extends Component {
           <div className="content__right">
             <div className="content__right__login">
               <a href="#">
-                <img src="/img/logo/avatar.png" />
-                <p>Đăng nhập</p>
+                <NavLink to="/dang-nhap">
+                  <img src="/img/logo/avatar.png" />
+                </NavLink>
+                <NavLink to="/dang-nhap">Đăng nhập</NavLink>
               </a>
             </div>
             <div className="content__right__dropdown">

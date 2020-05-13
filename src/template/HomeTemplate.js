@@ -9,7 +9,7 @@ const HomeLayout = (props) => {
       <Navbar />
 
       {props.children}
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };

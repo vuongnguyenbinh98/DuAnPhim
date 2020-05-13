@@ -1,5 +1,6 @@
 import Index from "./Page/Home";
 import DetailFilm from "./Page/Home/DetailFilm";
+import Login from "./Page/Home/Login";
 
 const routesHome = [
   {
@@ -22,6 +23,11 @@ const routesHome = [
     path: "/detail-film",
     exact: false,
     component: DetailFilm,
+  },
+  {
+    path: "/dang-nhap",
+    exact: false,
+    component: Login,
   },
 ];
 export { routesHome };

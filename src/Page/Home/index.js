@@ -103,7 +103,7 @@ export default class Home extends Component {
           </div> */}
           {/* test */}
           <section id="lichchieu" className="film">
-            <div className="film__content">
+            <div className="film__content" id="lichFilm">
               <ul className="nav nav-pills navMe">
                 <li className="nav-item">
                   <a
