@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import * as action from "./../../redux/Action";
 import { connect } from "react-redux";
 import "../../scss/Home.scss";
+import "../../scss/DetailFilm.scss";
+import "../../Components/Footer";
 
 class DetailFilm extends Component {
   componentDidMount() {
@@ -19,25 +21,27 @@ class DetailFilm extends Component {
   render() {
     const { film } = this.props;
     return (
-      <div className="container">
-        <h3>DetailMovie</h3>
-        <div className="row">
-          <div className="col-sm-6">
-            <img className="img-fluid" src={film.hinhAnh} atl="" />
-          </div>
-          <div className="col-sm-6">
-            <table className="table">
-              <tbody>
-                <tr>
-                  <td>Ten Phim</td>
-                  <td>{film.tenPhim}</td>
-                </tr>
-                <tr>
-                  <td>Mo ta</td>
-                  <td>{film.moTa}</td>
-                </tr>
-              </tbody>
-            </table>
+      <div className="detailFilm">
+        <div className="container">
+          <h3>DetailMovie</h3>
+          <div className="row">
+            <div className="col-sm-6">
+              <img className="img-fluid" src={film.hinhAnh} atl="" />
+            </div>
+            <div className="col-sm-6">
+              <table className="table">
+                <tbody>
+                  <tr>
+                    <td>Ten Phim</td>
+                    <td>{film.tenPhim}</td>
+                  </tr>
+                  <tr>
+                    <td>Mo ta</td>
+                    <td>{film.moTa}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </div>
