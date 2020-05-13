@@ -35,7 +35,7 @@ export default class Carousel extends Component {
                     data-slide="prev"
                 >
                     <span className="carousel-control-prev-icon" aria-hidden="true"/>
-                    <span className="sr-only">Previous</span>
+                    <span className="sr-only">Previou</span>
                 </a>
                 <a
                     className="carousel-control-next"
