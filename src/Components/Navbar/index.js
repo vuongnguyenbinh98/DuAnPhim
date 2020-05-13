@@ -27,7 +27,9 @@ export default class Navbar extends Component {
         </div>
         <div className="content">
           <div className="content__logo">
-            <img src="/img/logo/web-logo.png" />
+            <NavLink to="/">
+              <img src="/img/logo/web-logo.png" />
+            </NavLink>
           </div>
           <div className="content__menu">
             <nav>
