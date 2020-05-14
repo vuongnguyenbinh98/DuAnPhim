@@ -4,6 +4,7 @@ import "../../scss/Home.scss";
 import Carousel from "../../Components/Carousel";
 import Footer from "../../Components/Footer";
 import { NavLink } from "react-router-dom";
+import Cinema from "../../Components/Cinema";
 
 export default class Home extends Component {
   constructor(props) {
@@ -137,6 +138,9 @@ export default class Home extends Component {
             {renderPageNumbers}
             <span onClick={() => this.makeHttpRequestWithPage(1)}>&raquo;</span>
           </div> */}
+        </div>
+        <div className="container">
+          <Cinema />
         </div>
         <div className="Footer">
           <Footer />
