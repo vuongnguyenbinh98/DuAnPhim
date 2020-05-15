@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./styled.scss";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
 export default class Navbar extends Component {
   clickNav = () => {
@@ -35,9 +35,11 @@ export default class Navbar extends Component {
             <nav>
               <ul className="nav-links">
                 <li>
-                  <a className="active" to="" href="#lichFilm">
-                    Lịch chiếu
-                  </a>
+                  <Link to="/">
+                    <a className="active" to="" href="#lichFilm">
+                      Lịch chiếu
+                    </a>
+                  </Link>
                 </li>
                 <li>
                   <NavLink to="#">Cụm rạp</NavLink>

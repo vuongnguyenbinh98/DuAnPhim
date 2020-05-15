@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import * as action from "./../../redux/Action";
 import { connect } from "react-redux";
+import Background from "./../../asset/Login/bg_Login.jpg";
+import "../../scss/Login.scss";
 
 class Login extends Component {
   constructor(props) {
@@ -25,33 +27,36 @@ class Login extends Component {
   };
   render() {
     return (
-      <div className="container">
-        <h3>Đăng nhập</h3>
-        <div className="row">
-          <div className="col-sm-6 mx-auto">
-            <form onSubmit={this.handleSubmi}>
-              <div className="form-group">
-                <label>Tên Đăng nhập</label>
-                <input
-                  type="text"
-                  className="form-control"
-                  name="taiKhoan"
-                  onChange={this.handleOnchange}
-                />
-              </div>
-              <div className="form-group">
-                <label>Mật khẩu</label>
-                <input
-                  type="text"
-                  className="form-control"
-                  name="matKhau"
-                  onChange={this.handleOnchange}
-                />
-              </div>
-              <button type="submit" className="btn btn-success">
-                Đăng nhập
-              </button>
-            </form>
+      <div className="container-fluid bg_login ">
+        <img src={Background} />
+        <div className="box_login">
+          <div className="row">
+            <div className="col-sm-6 mx-auto">
+              <form onSubmit={this.handleSubmi}>
+                <div className="text_box">
+                  <label className="lb_login">Login</label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    placeholder="Username"
+                    name="taiKhoan"
+                    onChange={this.handleOnchange}
+                  />
+                </div>
+                <div className="text_box">
+                  <input
+                    type="text"
+                    className="form-control"
+                    placeholder="Password"
+                    name="matKhau"
+                    onChange={this.handleOnchange}
+                  />
+                </div>
+                <button type="submit" className="btn btn-success">
+                  Login
+                </button>
+              </form>
+            </div>
           </div>
         </div>
       </div>

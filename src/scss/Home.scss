@@ -35,7 +35,7 @@
                 margin: 5px 20px;
 
                 text-decoration: none;
-                background-color: #fb4226;
+                background-color: #131211;
                 color: #fff;
                 font-size: 22px;
                 padding: 10px 40px;
@@ -78,7 +78,11 @@
             display: block;
             width: 100%;
             height: 100%;
-            background: linear-gradient(to bottom, rgba(0, 176, 155, 0.5), rgba(150, 201, 61, 1));
+            background: linear-gradient(
+              to bottom,
+              rgba(17, 17, 17, 0.178),
+              rgba(12, 4, 0, 0.815)
+            );
 
             z-index: 2;
             transition: 0.5s all;
@@ -108,7 +112,7 @@
           }
           &:focus {
             font-size: 26px;
-            color: #fb4226 !important;
+            color: #0f0402ce !important;
             background-color: transparent;
           }
           // &:visited {
