@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 
+import "../Cinema/styled.scss";
+
 import { connect } from "react-redux";
 import * as action from "../../redux/Action/index";
 
@@ -7,29 +9,42 @@ class Cinema extends Component {
   componentDidMount() {
     this.props.getListCinema();
   }
+  handleTest = () => {
+    console.log(2);
+  };
   renderHTML = () => {
     if (this.props.cinemaList) {
       return this.props.cinemaList.map((item, index) => {
+        console.log(index);
         return (
-          <tr>
-            <td>
-              <img src={item.logo} height="50px" />
-            </td>
-            <td>{item.maHeThongRap}</td>
-          </tr>
+          <li className="nav-item" onClick={this.handleTest}>
+            <a
+              className="nav-link navCinema"
+              data-toggle="pill"
+              href="#cinema1"
+            >
+              <img src={item.logo} height="70px" onClick={this.handleTest} />
+            </a>
+          </li>
         );
       });
     }
   };
   render() {
     return (
-      <div>
-        <table class="table table-hover">
-          <thead>
-            <tr>{/* <th>Danh sách rạp</th> */}</tr>
-          </thead>
-          <tbody>{this.renderHTML()}</tbody>
-        </table>
+      <div className="cinema">
+        <div className="cinema__content">
+          {" "}
+          <ul className="nav nav-pills navMe">{this.renderHTML()}</ul>
+          {/* <div className="tab-content">
+          <div className="tab-pane container active" id="home">
+            <div className="row">A</div>
+          </div>
+          <div className="tab-pane container fade" id="#cinema1">
+            <div className="row">B</div>
+          </div>
+        </div> */}
+        </div>
       </div>
     );
   }
