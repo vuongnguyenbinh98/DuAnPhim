@@ -2,6 +2,7 @@ import Index from "./Page/Home";
 import DetailFilm from "./Page/Home/DetailFilm";
 import Login from "./Page/Home/Login";
 import CinemaDetail from "./Components/Cinema/Cinema-Detail";
+import Register from "./Page/Register/Register";
 
 const routesHome = [
   {
@@ -34,6 +35,11 @@ const routesHome = [
     path: "/detail-cinema/:maHeThongRap",
     exact: false,
     component: CinemaDetail,
+  },
+  {
+    path: "/register",
+    exact: false,
+    component: Register,
   },
 ];
 export { routesHome };

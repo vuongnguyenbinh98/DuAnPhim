@@ -1,45 +1,164 @@
+body {
+  margin: 0;
+  padding: 0;
+}
 .bg_login {
-  img {
+  .img_BG {
     position: absolute;
     left: 0;
     top: 10;
+
     width: 1536px;
-    height: 680px;
+    height: 683px;
+
     padding-left: -500px;
   }
-  .box_login {
-    width: 500px;
+  .loginbox {
+    width: 320px;
+    height: 420px;
+
+    background: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.336),
+      rgba(0, 0, 255, 0.651)
+    );
+    color: #000;
+
+    top: 50%;
+    left: 50%;
     position: absolute;
-    top: 30%;
-    left: 35%;
-    .row {
-      .text_box {
-        width: 100%;
-        overflow: hidden;
+
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+
+    padding: 50px 30px;
+    .logo {
+      width: 100px;
+      height: 100px;
+
+      border-radius: 50%;
+
+      position: absolute;
+      top: -20%;
+      left: calc(50% - 50px);
+    }
+  }
+  .row {
+    .lb_login {
+      margin: 0;
+      padding: 0 0 20px;
+      text-align: center;
+      font-size: 22px;
+      font-weight: bold;
+    }
+    p {
+      margin: 0;
+      padding: 0;
+      margin-left: -60px;
+
+      font-weight: bold;
+    }
+    .form-control {
+      width: 210%;
+      margin-bottom: 20px;
+
+      border: none;
+      border-bottom: 2px solid orangered;
+
+      margin-left: -70px;
+      &:focus {
+        box-shadow: none;
+      }
+    }
+    .form-control[type="text"] {
+      background: transparent;
+      outline: none;
+
+      height: 48px;
+      color: #ffff;
+      font-size: 17px;
+    }
+    a {
+      margin-left: -60px;
+      color: rgba(255, 255, 255, 0.568);
+    }
+    .btn_setup {
+      .btn {
         font-size: 20px;
-        padding: 8px 0;
-        margin: 8px 0;
-        border-bottom: 1px solid #fb4226;
-        .lb_login {
+        font-weight: bold;
+
+        &:hover {
           color: white;
-          font-size: 40px;
-          font-family: sans-serif;
-          border-bottom: 6px solid #fb4226;
-          margin-bottom: 50px;
+          transition: all 0.5s ease;
         }
-        input {
-          border: none;
-          outline: none;
-          background: none;
-          color: red;
-          font-size: 18px;
-          width: 210px;
-          margin: 10px;
-        }
-        .btn {
-          width: 500px;
+        &:focus {
+          box-shadow: none;
         }
       }
+      position: relative;
+
+      display: block;
+      color: white;
+
+      font-family: "montserrat";
+      text-decoration: none;
+
+      margin: 10px 60px 0 -60px;
+      padding: 0px 20px;
+
+      overflow: hidden;
+      border: 2px solid orangered;
+
+      transition: 1s all ease;
+      text-transform: uppercase;
+    }
+    .btn_setup::before {
+      background: orangered;
+
+      content: "";
+      width: 100%;
+      height: 100%;
+
+      position: absolute;
+      top: 50%;
+      left: 50%;
+
+      z-index: -1;
+      transition: all 0.8s ease;
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+    .btn_login::before {
+      width: 100%;
+      height: 0;
+
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+    .btn_login:hover {
+      border: 2px solid white;
+    }
+    .btn_login:hover::before {
+      height: 360%;
+      border: 6px solid white;
+      transition: all 0.6s;
+    }
+    .btn_register {
+      margin: -47px -65px -100px 65px;
+      .btn_regis[type="text"] {
+        margin-left: 48px;
+      }
+    }
+    .btn_register::before {
+      width: 100%;
+      height: 0;
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+    .btn_register:hover {
+      border: 2px solid white;
+    }
+    .btn_register:hover::before {
+      height: 380%;
+      border: 6px solid white;
+      transition: all 0.6s;
     }
   }
 }
