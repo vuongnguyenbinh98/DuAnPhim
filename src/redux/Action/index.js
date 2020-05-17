@@ -51,6 +51,30 @@ export const actGetListCinemaAPI = () => {
   };
 };
 //End Rap
+
+//Lay chi tiet Rap
+export const actGetDetailCinemaAPI = (id) => {
+  return (dispatch) => {
+    Axios({
+      method: "GET",
+      url: `http://movie0706.cybersoft.edu.vn/api/QuanLyRap/LayThongTinCumRapTheoHeThong?maHeThongRap=${id}`,
+    })
+      .then((result) => {
+        console.log(result.data);
+        dispatch(actGetDetailCinema(result.data));
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+};
+export const actGetDetailCinema = (detailCinema) => {
+  return {
+    type: ActionType.GET_LIST_DETAIL_CINEMA,
+    data: detailCinema,
+  };
+};
+//End chi tiet Rap
 export const actGetDetailMovie = (detailFilm) => {
   return {
     type: "GET_DETAIL_MOVIE",

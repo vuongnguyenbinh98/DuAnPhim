@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 import "../Cinema/styled.scss";
 
@@ -9,22 +10,20 @@ class Cinema extends Component {
   componentDidMount() {
     this.props.getListCinema();
   }
-  handleTest = () => {
-    console.log(2);
-  };
+
   renderHTML = () => {
     if (this.props.cinemaList) {
       return this.props.cinemaList.map((item, index) => {
         console.log(index);
         return (
-          <li className="nav-item" onClick={this.handleTest}>
-            <a
+          <li className="nav-item">
+            <Link
               className="nav-link navCinema"
-              data-toggle="pill"
-              href="#cinema1"
+              // data-toggle="pill"
+              to={`/detail-cinema/${item.maHeThongRap}`}
             >
-              <img src={item.logo} height="70px" onClick={this.handleTest} />
-            </a>
+              <img src={item.logo} height="70px" />
+            </Link>
           </li>
         );
       });

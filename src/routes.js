@@ -1,6 +1,7 @@
 import Index from "./Page/Home";
 import DetailFilm from "./Page/Home/DetailFilm";
 import Login from "./Page/Home/Login";
+import CinemaDetail from "./Components/Cinema/Cinema-Detail";
 
 const routesHome = [
   {
@@ -28,6 +29,11 @@ const routesHome = [
     path: "/dang-nhap",
     exact: false,
     component: Login,
+  },
+  {
+    path: "/detail-cinema/:maHeThongRap",
+    exact: false,
+    component: CinemaDetail,
   },
 ];
 export { routesHome };
