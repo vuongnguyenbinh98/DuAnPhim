@@ -75,6 +75,29 @@ export const actGetDetailCinema = (detailCinema) => {
   };
 };
 //End chi tiet Rap
+//Lay thong tin lich chieu he thong rap
+export const actGetInfoDetailCinemaAPI = (id) => {
+  return (dispatch) => {
+    Axios({
+      method: "GET",
+      url: `http://movie0706.cybersoft.edu.vn/api/QuanLyRap/LayThongTinLichChieuHeThongRap?maHeThongRap=${id}&maNhom=GP01`,
+    })
+      .then((rs) => {
+        console.log(rs.data);
+        dispatch(actGetInfoDetailCinema(rs.data));
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+};
+export const actGetInfoDetailCinema = (infoDetailCinema) => {
+  return {
+    type: ActionType.GET_INFO_DETAIL_CINEMA,
+    data: infoDetailCinema,
+  };
+};
+//End Lay thong tin lich chieu he thong rap
 export const actGetDetailMovie = (detailFilm) => {
   return {
     type: "GET_DETAIL_MOVIE",

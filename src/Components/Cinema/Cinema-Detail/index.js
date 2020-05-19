@@ -8,6 +8,7 @@ class CinemaDetail extends Component {
   componentDidMount() {
     const id = this.props.match.params.maHeThongRap;
     this.props.getDetailCinema(id);
+    this.props.getInfoDetailCinema(id);
     // console.log(id);
   }
   renderDetailCinema = () => {
@@ -32,6 +33,33 @@ class CinemaDetail extends Component {
     });
     // }
   };
+  renderInfoDetailCinema = () => {
+    const { infoDetailCinema } = this.props;
+
+    if (infoDetailCinema.lstCumRap) {
+      return infoDetailCinema.lstCumRap.map((item) => {
+        return (
+          <ul key={item.maHeThongRap}>
+            <li>
+              <a href="#">{item.tenCumRap}</a>
+              <a href="#">{item.diaChi}</a>
+            </li>
+          </ul>
+        );
+      });
+    }
+
+    // return infoDetailCinema.map((item) => {
+    //   return (
+    //     <ul key={item.maHeThongRap}>
+    //       <li>
+    //         <a href="#">{item.tenHeThongRap}</a>
+    //         <a href="#">{item.maHeThongRap}</a>
+    //       </li>
+    //     </ul>
+    //   );
+    // });
+  };
   render() {
     console.log("hello vi122333");
     return (
@@ -39,6 +67,7 @@ class CinemaDetail extends Component {
         <div className="cinemaDetail__content">
           <div className="container">
             <div className="row">{this.renderDetailCinema()}</div>
+            <div className="row">{this.renderInfoDetailCinema()}</div>
           </div>
         </div>
       </div>
@@ -48,12 +77,16 @@ class CinemaDetail extends Component {
 const mapStateToProps = (state) => {
   return {
     detailCinema: state.CinemaReducer.detailCinema,
+    infoDetailCinema: state.CinemaReducer.infoDetailCinema,
   };
 };
 const mapDispathToProps = (dispatch) => {
   return {
     getDetailCinema: (id) => {
       dispatch(action.actGetDetailCinemaAPI(id));
+    },
+    getInfoDetailCinema: (id) => {
+      dispatch(action.actGetInfoDetailCinemaAPI(id));
     },
   };
 };
