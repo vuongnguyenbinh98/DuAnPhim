@@ -11,6 +11,9 @@ class CinemaDetail extends Component {
     this.props.getInfoDetailCinema(id);
     // console.log(id);
   }
+  componentWillUnmount() {
+    this.props.resetDetailCinema();
+  }
   renderDetailCinema = () => {
     console.log("hello vi");
     const { detailCinema } = this.props;
@@ -35,39 +38,53 @@ class CinemaDetail extends Component {
   };
   renderInfoDetailCinema = () => {
     const { infoDetailCinema } = this.props;
-
-    if (infoDetailCinema.lstCumRap) {
-      return infoDetailCinema.lstCumRap.map((item) => {
-        return (
-          <ul key={item.maHeThongRap}>
-            <li>
-              <a href="#">{item.tenCumRap}</a>
-              <a href="#">{item.diaChi}</a>
-            </li>
-          </ul>
-        );
-      });
-    }
-
-    // return infoDetailCinema.map((item) => {
-    //   return (
-    //     <ul key={item.maHeThongRap}>
-    //       <li>
-    //         <a href="#">{item.tenHeThongRap}</a>
-    //         <a href="#">{item.maHeThongRap}</a>
-    //       </li>
-    //     </ul>
-    //   );
-    // });
+    return infoDetailCinema.map((item) => {
+      return (
+        <div className="col-md-4">
+          <div className="card " style={{ width: "18rem" }}>
+            {item.lstCumRap.map((lstCR) => {
+              return (
+                <div className="card-body">
+                  <h5 className="card-title">{lstCR.tenCumRap}</h5>
+                  {lstCR.danhSachPhim.map((dsp) => {
+                    return (
+                      <div className="card-text">
+                        <p className="card-text">{dsp.tenPhim}</p>
+                        <img
+                          className="card-img"
+                          src={dsp.hinhAnh}
+                          width="50px"
+                        />
+                        <a href="#" className="btn btn-primary">
+                          Mua vé
+                        </a>
+                      </div>
+                    );
+                  })}
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      );
+    });
   };
   render() {
-    console.log("hello vi122333");
     return (
       <div className="cinemaDetail">
         <div className="cinemaDetail__content">
           <div className="container">
-            <div className="row">{this.renderDetailCinema()}</div>
-            <div className="row">{this.renderInfoDetailCinema()}</div>
+            <div className="row rowDetailCinema">
+              {this.renderDetailCinema()}
+            </div>
+            {/* <div className="row rowInfoCinema">
+              {this.renderInfoDetailCinema()}
+            </div> */}
+          </div>
+        </div>
+        <div className="container">
+          <div className="row rowInfoCinema">
+            {this.renderInfoDetailCinema()}
           </div>
         </div>
       </div>
@@ -87,6 +104,9 @@ const mapDispathToProps = (dispatch) => {
     },
     getInfoDetailCinema: (id) => {
       dispatch(action.actGetInfoDetailCinemaAPI(id));
+    },
+    resetDetailCinema: () => {
+      dispatch(action.actGetDetailCinema([]));
     },
   };
 };

@@ -1,13 +1,20 @@
 .cinemaDetail {
-    height: 100%;
-    padding: 80px 0;
-    background-image: url("https://tix.vn/app/assets/img/icons/backapp.jpg?fbclid=IwAR3sKsUaRQfXDCUHOiXSQdrVye0uVKpy6T20hioIPToz3tZNS5SSZQIDHdE");
+    // height: 100%;
+    // padding: 80px 0;
+    // background-image: url("https://tix.vn/app/assets/img/icons/backapp.jpg?fbclid=IwAR3sKsUaRQfXDCUHOiXSQdrVye0uVKpy6T20hioIPToz3tZNS5SSZQIDHdE");
 
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    // background-position: center;
+    // background-repeat: no-repeat;
+    // background-size: cover;
 
     &__content {
+        height: 100%;
+        padding: 80px 0;
+        background-image: url("https://tix.vn/app/assets/img/icons/backapp.jpg?fbclid=IwAR3sKsUaRQfXDCUHOiXSQdrVye0uVKpy6T20hioIPToz3tZNS5SSZQIDHdE");
+
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
         .cardMe {
             width: 100%;
             height: auto;
@@ -16,6 +23,17 @@
             // .cardBodyMe {
             //     margin: 120px 0;
             // }
+        }
+        .rowDetailCinema {
+            margin-bottom: 200px;
+        }
+        .rowInfoCinema {
+            font-size: 22px;
+            // color: #ffffff;
+            img {
+                width: 200px;
+                height: auto;
+            }
         }
     }
 }
