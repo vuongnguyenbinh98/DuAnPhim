@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import * as action from "../../../redux/Action/index";
+import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 
 import "../Cinema-Detail/styled.scss";
@@ -26,7 +27,7 @@ class CinemaDetail extends Component {
             <div className="card-body cardBodyMe">
               <h5 className="card-title">{item.tenCumRap}</h5>
               <p className="card-text">{item.diaChi}</p>
-              <a href="#" className="btn btn-primary">
+              <a href={`#${item.maCumRap}`} className="btn btn-primary">
                 Mua vé
               </a>
             </div>
@@ -41,17 +42,23 @@ class CinemaDetail extends Component {
     return infoDetailCinema.map((item) => {
       return (
         <div className="col-md-4">
-          <div className="card " style={{ width: "18rem" }}>
-            {item.lstCumRap.map((lstCR) => {
-              return (
+          {item.lstCumRap.map((lstCR) => {
+            //Map cum rap
+            return (
+              <div
+                className="card m-3"
+                id={lstCR.maCumRap}
+                style={{ width: "18rem" }}
+              >
                 <div className="card-body">
                   <h5 className="card-title">{lstCR.tenCumRap}</h5>
                   {lstCR.danhSachPhim.map((dsp) => {
                     return (
+                      //Map danh sach phim
                       <div className="card-text">
                         <p className="card-text">{dsp.tenPhim}</p>
                         <img
-                          className="card-img"
+                          className="card-img mb-2"
                           src={dsp.hinhAnh}
                           width="50px"
                         />
@@ -59,12 +66,14 @@ class CinemaDetail extends Component {
                           Mua vé
                         </a>
                       </div>
+                      //end danh sach phim
                     );
                   })}
                 </div>
-              );
-            })}
-          </div>
+              </div>
+            );
+            //End map cum rap
+          })}
         </div>
       );
     });
