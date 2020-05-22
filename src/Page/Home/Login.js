@@ -67,13 +67,13 @@ class Login extends Component {
                     Login
                   </button>
                 </a>
-                <a className="btn_setup btn_register" href="abc">
+                <span className="btn_setup btn_register" href="abc">
                   <NavLink to="/register">
                     <button className="btn btn_regis" type="text">
                       Register
                     </button>
                   </NavLink>
-                </a>
+                </span>
               </form>
             </div>
           </div>

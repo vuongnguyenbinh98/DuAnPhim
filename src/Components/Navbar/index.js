@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+
 import "./styled.scss";
 import { NavLink, Link } from "react-router-dom";
 
@@ -56,7 +57,9 @@ export default class Navbar extends Component {
               <NavLink to="/dang-nhap">
                 <img src="/img/logo/avatar.png" alt="" />
               </NavLink>
-              <NavLink to="/dang-nhap">Đăng nhập</NavLink>
+              <NavLink to="/dang-nhap" href="abc">
+                Đăng nhập
+              </NavLink>
             </div>
             <div className="content__right__dropdown">
               <img src="/img/logo/location-header.png" alt="" />
