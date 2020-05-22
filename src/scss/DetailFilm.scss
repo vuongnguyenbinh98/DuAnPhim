@@ -1,11 +1,7 @@
-
-
 .detail-wrapper {
-
     height: 500px;
     width: 100%;
     position: relative;
-
 
     & .bg-fade {
         background-image: url("./../asset/images/backapp.jpg");
@@ -17,12 +13,13 @@
         height: 100%;
         top: 0;
         filter: blur(3px);
-
     }
 
     & .detail-container {
         & .row {
-
+        }
+        .renderRap {
+            margin-top: 150px;
         }
     }
 }
