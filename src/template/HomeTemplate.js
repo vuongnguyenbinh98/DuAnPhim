@@ -1,7 +1,7 @@
 import React from "react";
 import { Route } from "react-router-dom";
 import Navbar from "./../Components/Navbar/index";
-import Footer from "./../Components/Footer/index";
+// import Footer from "./../Components/Footer/index";
 
 const HomeLayout = (props) => {
   return (

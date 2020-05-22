@@ -30,9 +30,9 @@ class Login extends Component {
   render() {
     return (
       <div className="container-fluid bg_login ">
-        <img className="img_BG" src={Background} />
+        <img className="img_BG" src={Background} alt="" />
         <div className="loginbox">
-          <img className="logo" src={Logo} />
+          <img className="logo" src={Logo} alt="" />
           <div className="row">
             <div className="col-sm-6 mx-auto">
               <form onSubmit={this.handleSubmi}>
@@ -57,15 +57,17 @@ class Login extends Component {
                     onChange={this.handleOnchange}
                   />
                 </div>
-                <a href="#">Lost your passwork?</a>
-                <br />
-                <a href="#">Don't have an account?</a>
-                <a className="btn_setup btn_login">
+                <div>
+                  <a href="abc">Lost your passwork?</a>
+                  <br />
+                  <a href="abc">Don't have an account?</a>
+                </div>
+                <a className="btn_setup btn_login" href="abc">
                   <button type="submit" className="btn ">
                     Login
                   </button>
                 </a>
-                <a className="btn_setup btn_register">
+                <a className="btn_setup btn_register" href="abc">
                   <NavLink to="/register">
                     <button className="btn btn_regis" type="text">
                       Register

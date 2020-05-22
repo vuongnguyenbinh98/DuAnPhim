@@ -42,7 +42,7 @@ class DetailFilm extends Component {
           <h3>DetailMovie</h3>
           <div className="row">
             <div className="col-sm-6">
-              <img className="img-fluid" src={film.hinhAnh} atl="" />
+              <img className="img-fluid" src={film.hinhAnh} alt="" />
             </div>
             <div className="col-sm-6">
               <ul className="list-group list-group-flush">

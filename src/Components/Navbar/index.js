@@ -4,7 +4,7 @@ import { NavLink, Link } from "react-router-dom";
 
 export default class Navbar extends Component {
   clickNav = () => {
-    const hambuger = document.querySelector(".hambuger");
+    // const hambuger = document.querySelector(".hambuger");
     const navLinks = document.querySelector(".content__menu");
     const links = document.querySelectorAll(".nav-links li");
     const login = document.querySelector(".content__right__login");
@@ -28,17 +28,15 @@ export default class Navbar extends Component {
         <div className="content">
           <div className="content__logo">
             <NavLink to="/">
-              <img src="/img/logo/web-logo.png" />
+              <img src="/img/logo/web-logo.png" alt="" />
             </NavLink>
           </div>
           <div className="content__menu">
             <nav>
               <ul className="nav-links">
                 <li>
-                  <Link to="/">
-                    <a className="active" to="" href="#lichFilm">
-                      Lịch chiếu
-                    </a>
+                  <Link to="/home" className="active" href="#lichFilm">
+                    Lịch chiếu
                   </Link>
                 </li>
                 <li>
@@ -55,18 +53,15 @@ export default class Navbar extends Component {
           </div>
           <div className="content__right">
             <div className="content__right__login">
-              <a href="#">
-                <NavLink to="/dang-nhap">
-                  <img src="/img/logo/avatar.png" />
-                </NavLink>
-                <NavLink to="/dang-nhap">Đăng nhập</NavLink>
-              </a>
+              <NavLink to="/dang-nhap">
+                <img src="/img/logo/avatar.png" alt="" />
+              </NavLink>
+              <NavLink to="/dang-nhap">Đăng nhập</NavLink>
             </div>
             <div className="content__right__dropdown">
-              <img src="/img/logo/location-header.png" />
+              <img src="/img/logo/location-header.png" alt="" />
               <div className="content__right__dropdown__select">
                 <select
-                  name
                   id="input"
                   className="form-control dropDown"
                   required="required"

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import * as action from "../../../redux/Action/index";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 
 import "../Cinema-Detail/styled.scss";
@@ -61,8 +61,9 @@ class CinemaDetail extends Component {
                           className="card-img mb-2"
                           src={dsp.hinhAnh}
                           width="50px"
+                          alt=""
                         />
-                        <a href="#" className="btn btn-primary">
+                        <a href="abc" className="btn btn-primary">
                           Mua vé
                         </a>
                       </div>

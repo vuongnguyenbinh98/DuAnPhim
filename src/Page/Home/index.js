@@ -44,12 +44,13 @@ export default class Home extends Component {
 
   render() {
     // const { movie } = this.props;
-    let users, renderPageNumbers;
+    let users;
+    // let renderPageNumbers;
     console.log(this.state.users);
     if (this.state.users !== null) {
       users = this.state.users.map((user) => (
         //test
-        <div className="col-lg-3 col-md-6 col-sm-12 dadyCard">
+        <div key={user.maPhim} className="col-lg-3 col-md-6 col-sm-12 dadyCard">
           <div className="card" style={{ width: "15rem" }}>
             <img
               src={user.hinhAnh}
@@ -80,19 +81,19 @@ export default class Home extends Component {
         pageNumbers.push(i);
       }
 
-      renderPageNumbers = pageNumbers.map((number) => {
-        let classes = this.state.currentPage === number ? styles.active : "";
+      // renderPageNumbers = pageNumbers.map((number) => {
+      //   let classes = this.state.currentPage === number ? styles.active : "";
 
-        return (
-          <span
-            key={number}
-            className={classes}
-            onClick={() => this.makeHttpRequestWithPage(number)}
-          >
-            {number}
-          </span>
-        );
-      });
+      //   return (
+      //     <span
+      //       key={number.maPhim}
+      //       className={classes}
+      //       onClick={() => this.makeHttpRequestWithPage(number)}
+      //     >
+      //       {number}
+      //     </span>
+      //   );
+      // });
     }
 
     return (

@@ -16,13 +16,13 @@ class Cinema extends Component {
       return this.props.cinemaList.map((item, index) => {
         console.log(index);
         return (
-          <li className="nav-item">
+          <li key={item.maHeThongRap} className="nav-item">
             <Link
               className="nav-link navCinema"
               // data-toggle="pill"
               to={`/detail-cinema/${item.maHeThongRap}`}
             >
-              <img src={item.logo} height="70px" />
+              <img src={item.logo} height="70px" alt="" />
             </Link>
           </li>
         );
