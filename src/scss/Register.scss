@@ -1,0 +1,241 @@
+.bg_register {
+    height: 120%;
+    padding: 333px 0;
+    background-image: url("https://images.wallpaperscraft.com/image/notebook_emptiness_old_table_pen_writing_80056_3840x2160.jpg");
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    position: relative;
+
+    font-family: "Courier New", Courier, monospace;
+    .h2_name {
+        position: absolute;
+        top: 4%;
+        left: 24%;
+
+        font-size: 30px;
+        transform: rotate(-6deg);
+    }
+    .span_tk {
+        position: absolute;
+        top: 15.5%;
+        left: 24%;
+
+        font-size: 22px;
+        transform: rotate(-6deg);
+    }
+    .ip_tk {
+        position: absolute;
+        top: 18%;
+        left: 24%;
+        padding-top: 20px;
+
+        transform: rotate(-7deg);
+        width: 330px;
+        height: 30px;
+        background: transparent;
+
+        border: none;
+        border-bottom: 1px dashed black;
+
+        color: rgb(94, 6, 94);
+        font-weight: 550;
+        font-size: 20px;
+        &:focus {
+            box-shadow: none;
+            background: transparent;
+
+            border: none;
+            border-bottom: 1px dashed black;
+        }
+        &:focus[type="text"] {
+            color: rgb(94, 6, 94);
+            font-weight: 550;
+            padding-top: 20px;
+        }
+    }
+    .span_mk {
+        position: absolute;
+        top: 30%;
+        left: 24.5%;
+
+        font-size: 22px;
+        transform: rotate(-6deg);
+    }
+    .ip_mk {
+        position: absolute;
+        top: 32%;
+        left: 24.5%;
+        padding-top: 19px;
+
+        width: 330px;
+        height: 30px;
+
+        transform: rotate(-7deg);
+        background: transparent;
+
+        border: none;
+        border-bottom: 1px dashed black;
+
+        color: rgb(94, 6, 94);
+        font-weight: 550;
+        font-size: 20px;
+        &:focus {
+            box-shadow: none;
+            background: transparent;
+
+            border: none;
+            border-bottom: 1px dashed black;
+        }
+        &:focus[type="text"] {
+            color: rgb(94, 6, 94);
+            font-weight: 550;
+            padding-top: 19px;
+        }
+    }
+    .span_ht {
+        position: absolute;
+        top: 45%;
+        left: 25.2%;
+
+        font-size: 22px;
+        transform: rotate(-6deg);
+    }
+    .ip_ht {
+        position: absolute;
+        top: 45%;
+        left: 25.5%;
+        padding-top: 30px;
+
+        width: 330px;
+        height: 45px;
+
+        transform: rotate(-7deg);
+        background: transparent;
+
+        color: rgb(94, 6, 94);
+        font-weight: 550;
+        font-size: 20px;
+
+        border: none;
+        border-bottom: 1px dashed black;
+        &:focus {
+            box-shadow: none;
+            background: transparent;
+
+            border: none;
+            border-bottom: 1px dashed black;
+        }
+        &:focus[type="text"] {
+            color: rgb(94, 6, 94);
+            font-weight: 550;
+            padding-top: 30px;
+        }
+    }
+    .span_email {
+        position: absolute;
+        top: 9.5%;
+        left: 48%;
+
+        transform: rotate(-5deg);
+        font-size: 22px;
+    }
+    .ip_email {
+        position: absolute;
+        top: 10%;
+        left: 48%;
+        padding-top: 30px;
+
+        width: 330px;
+        height: 44px;
+        transform: rotate(-6deg);
+
+        background: transparent;
+
+        color: rgb(94, 6, 94);
+        font-weight: 550;
+        font-size: 20px;
+
+        border: none;
+        border-bottom: 1px dashed black;
+        &:focus {
+            box-shadow: none;
+            background: transparent;
+
+            border: none;
+            border-bottom: 1px dashed black;
+        }
+        &:focus[type="text"] {
+            color: rgb(94, 6, 94);
+            font-weight: 550;
+            padding-top: 30px;
+        }
+    }
+    .span_sdt {
+        position: absolute;
+        top: 24%;
+        left: 48.8%;
+
+        font-size: 22px;
+
+        transform: rotate(-5deg);
+    }
+    .ip_sdt {
+        position: absolute;
+        top: 25%;
+        left: 49%;
+        padding-top: 30px;
+
+        width: 330px;
+        height: 44px;
+        transform: rotate(-6deg);
+        background: transparent;
+
+        color: rgb(94, 6, 94);
+        font-weight: 550;
+        font-size: 20px;
+
+        border: none;
+        border-bottom: 1px dashed black;
+
+        &:focus {
+            box-shadow: none;
+            background: transparent;
+
+            border: none;
+            border-bottom: 1px dashed black;
+        }
+        &:focus[type="text"] {
+            color: rgb(94, 6, 94);
+            font-weight: 550;
+            padding-top: 30px;
+        }
+    }
+    .btn {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+
+        transform: rotate(-6deg);
+
+        font-weight: 600;
+        color: #091972;
+        font-size: 25px;
+        border-bottom: none;
+        &:hover {
+            background: #03e9f4;
+            color: #050801;
+
+            box-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4, 0 0 50px #03e9f4, 0 0 200px #03e9f4;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            overflow: hidden;
+            transition: all 0.5s ease;
+        }
+        &:focus {
+            border: none;
+        }
+    }
+}

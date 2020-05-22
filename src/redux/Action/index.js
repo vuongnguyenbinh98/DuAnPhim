@@ -1,6 +1,26 @@
 import Axios from "axios";
 import * as ActionType from "../Constants/ActionType";
 
+export const actResgisterUser = (user) => {
+  // const userRegister = JSON.parse(localStorage.getItem("userAdmin"));
+  return (dispatch) => {
+    Axios({
+      method: "POST",
+      url: "http://movie0706.cybersoft.edu.vn/api/QuanLyNguoiDung/DangKy",
+      data: user,
+      // headers: {
+      //   Authorization: "Bearer" + userRegister.accessToken,
+      // },
+    })
+      .then((rs) => {
+        console.log(rs.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+};
+
 export const actLoginAPI = (user, history) => {
   return (dispatch) => {
     Axios({
