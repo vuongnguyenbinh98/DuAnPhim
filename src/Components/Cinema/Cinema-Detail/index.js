@@ -37,43 +37,77 @@ class CinemaDetail extends Component {
     });
     // }
   };
-  renderInfoDetailCinema = () => {
+  // renderInfoDetailCinema = () => {
+  //   const { infoDetailCinema } = this.props;
+  //   return infoDetailCinema.map((item) => {
+  //     return (
+  //       <div className="col-md-4">
+  //         {item.lstCumRap.map((lstCR) => {
+  //           //Map cum rap
+  //           return (
+  //             <div
+  //               className="card m-3"
+  //               id={lstCR.maCumRap}
+  //               style={{ width: "18rem" }}
+  //             >
+  //               <div className="card-body">
+  //                 <h5 className="card-title">{lstCR.tenCumRap}</h5>
+  //                 {lstCR.danhSachPhim.map((dsp) => {
+  //                   return (
+  //                     //Map danh sach phim
+  //                     <div className="card-text">
+  //                       <p className="card-text">{dsp.tenPhim}</p>
+  //                       <img
+  //                         className="card-img mb-2"
+  //                         src={dsp.hinhAnh}
+  //                         width="50px"
+  //                         alt=""
+  //                       />
+  //                       <a href="abc" className="btn btn-primary">
+  //                         Mua vé
+  //                       </a>
+  //                     </div>
+  //                     //end danh sach phim
+  //                   );
+  //                 })}
+  //               </div>
+  //             </div>
+  //           );
+  //           //End map cum rap
+  //         })}
+  //       </div>
+  //     );
+  //   });
+  // };
+  renderInfoCineMa = () => {
     const { infoDetailCinema } = this.props;
     return infoDetailCinema.map((item) => {
       return (
-        <div className="col-md-4">
-          {item.lstCumRap.map((lstCR) => {
-            //Map cum rap
+        <div className="lichChieu" key={item.maHeThongRap}>
+          {item.lstCumRap.map((item2) => {
             return (
-              <div
-                className="card m-3"
-                id={lstCR.maCumRap}
-                style={{ width: "18rem" }}
-              >
-                <div className="card-body">
-                  <h5 className="card-title">{lstCR.tenCumRap}</h5>
-                  {lstCR.danhSachPhim.map((dsp) => {
+              <div className="contentLichChieu">
+                <div id={item2.maCumRap} className="title">
+                  <h5>{item2.tenCumRap}</h5>
+                  <p>{item2.diaChi}</p>
+                </div>
+                <div className="image">
+                  {item2.danhSachPhim.map((item3) => {
                     return (
-                      //Map danh sach phim
-                      <div className="card-text">
-                        <p className="card-text">{dsp.tenPhim}</p>
-                        <img
-                          className="card-img mb-2"
-                          src={dsp.hinhAnh}
-                          width="50px"
-                          alt=""
-                        />
-                        <a href="abc" className="btn btn-primary">
-                          Mua vé
-                        </a>
+                      <div className="image__content">
+                        <h3>{item3.tenPhim}</h3>
+                        <img src={item3.hinhAnh} />
+                        {/* <p>
+                          {item3.lstLichChieuTheoPhim.map((item4) => {
+                            return <div>{item4.tenRap}</div>;
+                          })}
+                        </p> */}
                       </div>
-                      //end danh sach phim
                     );
                   })}
                 </div>
               </div>
             );
-            //End map cum rap
           })}
         </div>
       );
@@ -82,6 +116,7 @@ class CinemaDetail extends Component {
   render() {
     return (
       <div className="cinemaDetail">
+        <div className="bg_fade"></div>
         <div className="cinemaDetail__content">
           <div className="container">
             <div className="row rowDetailCinema">
@@ -90,13 +125,80 @@ class CinemaDetail extends Component {
             {/* <div className="row rowInfoCinema">
               {this.renderInfoDetailCinema()}
             </div> */}
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  id="home-tab"
+                  data-toggle="tab"
+                  href="#home"
+                  role="tab"
+                  aria-controls="home"
+                  aria-selected="true"
+                >
+                  Lịch chiếu
+                </a>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  id="profile-tab"
+                  data-toggle="tab"
+                  href="#profile"
+                  role="tab"
+                  aria-controls="profile"
+                  aria-selected="false"
+                >
+                  Thông tin
+                </a>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  id="contact-tab"
+                  data-toggle="tab"
+                  href="#contact"
+                  role="tab"
+                  aria-controls="contact"
+                  aria-selected="false"
+                >
+                  Đánh giá
+                </a>
+              </li>
+            </ul>
+            <div class="tab-content" id="myTabContent">
+              <div
+                class="tab-pane fade show active"
+                id="home"
+                role="tabpanel"
+                aria-labelledby="home-tab"
+              >
+                {this.renderInfoCineMa()}
+              </div>
+              <div
+                class="tab-pane fade"
+                id="profile"
+                role="tabpanel"
+                aria-labelledby="profile-tab"
+              >
+                ...
+              </div>
+              <div
+                class="tab-pane fade"
+                id="contact"
+                role="tabpanel"
+                aria-labelledby="contact-tab"
+              >
+                ...
+              </div>
+            </div>
           </div>
         </div>
-        <div className="container">
+        {/* <div className="container">
           <div className="row rowInfoCinema">
             {this.renderInfoDetailCinema()}
           </div>
-        </div>
+        </div> */}
       </div>
     );
   }
