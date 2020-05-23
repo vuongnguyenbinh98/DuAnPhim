@@ -41,13 +41,19 @@ export default class Navbar extends Component {
                   </Link>
                 </li>
                 <li>
-                  <NavLink to="#">Cụm rạp</NavLink>
+                  <NavLink className="menu" to="#">
+                    Cụm rạp
+                  </NavLink>
                 </li>
                 <li>
-                  <NavLink to="#">Tin tức</NavLink>
+                  <NavLink className="menu" to="#">
+                    Tin tức
+                  </NavLink>
                 </li>
                 <li>
-                  <NavLink to="#">Ứng dụng</NavLink>
+                  <NavLink className="menu" to="#">
+                    Ứng dụng
+                  </NavLink>
                 </li>
               </ul>
             </nav>
