@@ -97,11 +97,15 @@ class CinemaDetail extends Component {
                       <div className="image__content">
                         <h3>{item3.tenPhim}</h3>
                         <img src={item3.hinhAnh} />
-                        {/* <p>
+                        <div className="muaVe">
+                          <button className="muaVe">Mua vé</button>
+                        </div>
+
+                        {/* <div>
                           {item3.lstLichChieuTheoPhim.map((item4) => {
-                            return <div>{item4.tenRap}</div>;
+                            return <div>{item4.ngayChieuGioChieu}</div>;
                           })}
-                        </p> */}
+                        </div> */}
                       </div>
                     );
                   })}
@@ -125,72 +129,76 @@ class CinemaDetail extends Component {
             {/* <div className="row rowInfoCinema">
               {this.renderInfoDetailCinema()}
             </div> */}
-            <ul class="nav nav-tabs" id="myTab" role="tablist">
-              <li class="nav-item">
-                <a
-                  class="nav-link active"
-                  id="home-tab"
-                  data-toggle="tab"
-                  href="#home"
-                  role="tab"
-                  aria-controls="home"
-                  aria-selected="true"
+            <div className="rowInfoCinema">
+              {/* BeginTab */}
+              <ul class="nav nav-tabs navTabsMe" id="myTab" role="tablist">
+                <li class="nav-item">
+                  <a
+                    class="nav-link active"
+                    id="home-tab"
+                    data-toggle="tab"
+                    href="#home"
+                    role="tab"
+                    aria-controls="home"
+                    aria-selected="true"
+                  >
+                    Lịch chiếu
+                  </a>
+                </li>
+                {/* <li class="nav-item">
+                  <a
+                    class="nav-link"
+                    id="profile-tab"
+                    data-toggle="tab"
+                    href="#profile"
+                    role="tab"
+                    aria-controls="profile"
+                    aria-selected="false"
+                  >
+                    Thông tin
+                  </a>
+                </li> */}
+                <li class="nav-item">
+                  <a
+                    class="nav-link"
+                    id="contact-tab"
+                    data-toggle="tab"
+                    href="#contact"
+                    role="tab"
+                    aria-controls="contact"
+                    aria-selected="false"
+                  >
+                    Đánh giá
+                  </a>
+                </li>
+              </ul>
+              <div class="tab-content" id="myTabContent">
+                <div
+                  class="tab-pane fade show active"
+                  id="home"
+                  role="tabpanel"
+                  aria-labelledby="home-tab"
                 >
-                  Lịch chiếu
-                </a>
-              </li>
-              <li class="nav-item">
-                <a
-                  class="nav-link"
-                  id="profile-tab"
-                  data-toggle="tab"
-                  href="#profile"
-                  role="tab"
-                  aria-controls="profile"
-                  aria-selected="false"
+                  {this.renderInfoCineMa()}
+                </div>
+                <div
+                  class="tab-pane fade"
+                  id="profile"
+                  role="tabpanel"
+                  aria-labelledby="profile-tab"
                 >
-                  Thông tin
-                </a>
-              </li>
-              <li class="nav-item">
-                <a
-                  class="nav-link"
-                  id="contact-tab"
-                  data-toggle="tab"
-                  href="#contact"
-                  role="tab"
-                  aria-controls="contact"
-                  aria-selected="false"
+                  ...
+                </div>
+                <div
+                  class="tab-pane fade"
+                  id="contact"
+                  role="tabpanel"
+                  aria-labelledby="contact-tab"
                 >
-                  Đánh giá
-                </a>
-              </li>
-            </ul>
-            <div class="tab-content" id="myTabContent">
-              <div
-                class="tab-pane fade show active"
-                id="home"
-                role="tabpanel"
-                aria-labelledby="home-tab"
-              >
-                {this.renderInfoCineMa()}
+                  ...
+                </div>
               </div>
-              <div
-                class="tab-pane fade"
-                id="profile"
-                role="tabpanel"
-                aria-labelledby="profile-tab"
-              >
-                ...
-              </div>
-              <div
-                class="tab-pane fade"
-                id="contact"
-                role="tabpanel"
-                aria-labelledby="contact-tab"
-              >
-                ...
-              </div>
+              {/* EndTab */}
             </div>
           </div>
         </div>
