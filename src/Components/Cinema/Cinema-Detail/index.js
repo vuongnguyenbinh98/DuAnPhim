@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import * as action from "../../../redux/Action/index";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 
 import "../Cinema-Detail/styled.scss";
@@ -98,7 +98,14 @@ class CinemaDetail extends Component {
                         <h3>{item3.tenPhim}</h3>
                         <img src={item3.hinhAnh} />
                         <div className="muaVe">
-                          <button className="muaVe">Mua vé</button>
+                          <Link
+                            // to={`muaVePhim/${item3.maPhim}`}
+                            target="_blank"
+                            to={`/checkout/${item3.maPhim}`}
+                            className="muaVe"
+                          >
+                            Mua vé
+                          </Link>
                         </div>
 
                         {/* <div>

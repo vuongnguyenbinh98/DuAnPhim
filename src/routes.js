@@ -38,7 +38,8 @@ const routesHome = [
     component: CinemaDetail,
   },
   {
-    path: "/detail-cinema/:maCumRap",
+    // path: "/detail-cinemaa/:maCumRap",
+    path: "/checkout/:id",
     exact: false,
     component: CinemaCluster,
   },
