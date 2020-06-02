@@ -5,6 +5,7 @@ import Carousel from "../../Components/Carousel";
 import Footer from "../../Components/Footer";
 import { NavLink } from "react-router-dom";
 import Cinema from "../../Components/Cinema";
+import News from "../../Components/News";
 
 export default class Home extends Component {
   constructor(props) {
@@ -58,10 +59,21 @@ export default class Home extends Component {
               style={{ width: "100%" }}
               alt="..."
             />
+
             <div className="card-body">
               <h1 className="card-title">{user.tenPhim}</h1>
               <div className="buy">
                 <NavLink to={`/detail-film/${user.maPhim}`}>Mua vé</NavLink>
+                {/* <div className="trailer">
+                  <iframe
+                    width="560"
+                    height="315"
+                    src={user.trailer}
+                    frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                  ></iframe>
+                </div> */}
               </div>
             </div>
           </div>
@@ -142,6 +154,9 @@ export default class Home extends Component {
         </div>
         <div className="container">
           <Cinema />
+        </div>
+        <div className="container">
+          <News />
         </div>
         <div className="Footer">
           <Footer />

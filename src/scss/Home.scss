@@ -19,6 +19,19 @@ $box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.5);
           width: 100%;
           height: 100%;
           .card-body {
+            // .trailer {
+            //   z-index: 10000;
+            //   position: absolute;
+            //   top: 50%;
+            //   left: 50%;
+            //   transform: translate(-50%, -50%);
+            //   // button {
+            //   //   position: absolute;
+            //   //   top: 50%;
+            //   //   left: 50%;
+            //   //   transform: translate(-50%, -50%);
+            //   // }
+            // }
             .card-title {
               height: 100%;
               font-size: 18px;
@@ -77,6 +90,18 @@ $box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.5);
                 transform: translateY(-100px);
               }
             }
+            //Trailer
+            // &::after {
+            //   content: "A";
+            //   height: 10px;
+            //   width: 10px;
+            //   position: absolute;
+            //   top: 50%;
+            //   left: 50%;
+            //   transform: translate(-50%, -50%);
+            //   z-index: 10000;
+            //   font-weight: bold;
+            // }
           }
           &::before {
             content: "";

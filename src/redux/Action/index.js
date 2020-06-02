@@ -100,7 +100,7 @@ export const actGetInfoDetailCinemaAPI = (id) => {
   return (dispatch) => {
     Axios({
       method: "GET",
-      url: `http://movie0706.cybersoft.edu.vn/api/QuanLyRap/LayThongTinLichChieuHeThongRap?maHeThongRap=${id}&maNhom=GP01`,
+      url: `http://movie0706.cybersoft.edu.vn/api/QuanLyRap/LayThongTinLichChieuHeThongRap?maHeThongRap=${id}&maNhom=GP05`,
     })
       .then((rs) => {
         console.log(rs.data);
