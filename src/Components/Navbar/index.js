@@ -46,7 +46,7 @@ export default class Navbar extends Component {
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink className="menu" to="#">
+                  <NavLink className="menu" to="#news">
                     Tin tức
                   </NavLink>
                 </li>

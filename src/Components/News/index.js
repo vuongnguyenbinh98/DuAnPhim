@@ -97,7 +97,122 @@ export default class News extends Component {
                   </div>
                 </div>
               </div>
-
+              <div className="row">
+                <div className="col-md-6">
+                  <span>
+                    <i class="fa fa-thumbs-up"></i>
+                    <i class="fa fa-comment"></i>
+                  </span>
+                </div>
+                <div className="col-md-6">
+                  <span>
+                    <i class="fa fa-thumbs-up"></i>
+                    <i class="fa fa-comment"></i>
+                  </span>
+                </div>
+              </div>
+              <div className="row">
+                <div className="col-md-8">
+                  <div className="row">
+                    <div className="col-md-6">
+                      <div className="dienAnh24h">
+                        <img
+                          src="https://s3img.vcdn.vn/123phim/2020/05/phim-cho-ca-gia-dinh-vui-ve-nhan-dip-le-quoc-te-thieu-nhi-1-6-15905643444860.png"
+                          className="img-fluid"
+                        />
+                        <a href="#">
+                          <p>
+                            Phim cho cả gia đình vui vẻ nhân dịp lễ Quốc Tế
+                            Thiếu Nhi 1/6
+                          </p>
+                        </a>
+                        <p className="text">
+                          Phim chiếu rạp dịp Quốc tế Thiếu nhi của năm 2020 có
+                          phần kém sôi động hơn những năm trước nhưng không vì
+                          vậy mà khán giả nhỏ tuổi bị “ngó lơ”. Cùng điểm qua
+                          hai tựa phim hoạt
+                        </p>
+                      </div>
+                    </div>
+                    <div className="col-md-6">
+                      <div className="dienAnh24h">
+                        <img
+                          src="https://s3img.vcdn.vn/123phim/2020/05/antebellum-an-dinh-ngay-khoi-chieu-chinh-thuc-15900552374091.png"
+                          className="img-fluid"
+                        />
+                        <a href="#">
+                          <p>Antebellum ấn định ngày khởi chiếu chính thức</p>
+                        </a>
+                        <p className="text">
+                          Từng gây tiếng vang với hàng loạt siêu phẩm kinh dị
+                          giật gân đầy ấn tượng, nhà sản xuất của “Get Out” và
+                          “Us” tiếp tục tấn công màn ảnh rộng với một trong
+                          những tác phẩm kinh
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-md-4">
+                  {/* 1 */}
+                  <div className="row right right1">
+                    <div className="col-md-2">
+                      <img
+                        src="https://s3img.vcdn.vn/123phim/2020/05/david-fincher-bac-thay-su-dung-visual-effects-15900518481959.png"
+                        width="50px"
+                      />
+                    </div>
+                    <div className="col-md-10">
+                      <p>David Fincher bậc thầy sử dụng Visual Effects</p>
+                    </div>
+                  </div>
+                  {/* 2 */}
+                  <div className="row right1">
+                    <div className="col-md-2">
+                      <img
+                        src="https://s3img.vcdn.vn/123phim/2020/05/thien-linh-cai-chuyen-chua-ke-lam-tot-hon-phien-ban-chieu-rap-that-son-tam-linh-15898834629996.png"
+                        width="50px"
+                      />
+                    </div>
+                    <div className="col-md-10">
+                      <p>
+                        Thiên Linh Cái: Chuyện Chưa Kể làm tốt hơn phiên bản
+                        chiếu rạ...
+                      </p>
+                    </div>
+                  </div>
+                  {/* 3 */}
+                  <div className="row right1">
+                    <div className="col-md-2">
+                      <img
+                        src="https://s3img.vcdn.vn/123phim/2020/05/baba-yaga-va-nhung-man-cameo-lam-khan-gia-thot-tim-tren-man-anh-rong-15895151694055.png"
+                        width="50px"
+                      />
+                    </div>
+                    <div className="col-md-10">
+                      <p>
+                        Baba Yaga và những màn cameo làm khán giả thót tim trên
+                        màn...
+                      </p>
+                    </div>
+                  </div>
+                  {/* 4 */}
+                  <div className="row right1">
+                    <div className="col-md-2">
+                      <img
+                        src="https://s3img.vcdn.vn/123phim/2020/05/trailer-truyen-thuyet-ve-quan-tien-ngap-tran-bi-an-tu-cau-chuyen-khi-vuon-hiep-nguoi-den-can-benh-co-dan-ong-la-khoi-ngay-15891896054703.png"
+                        width="50px"
+                      />
+                    </div>
+                    <div className="col-md-10">
+                      <p>
+                        Trailer “Truyền Thuyết Về Quán Tiên”: ngập tràn bí ẩn từ
+                        câu...
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
               {/* end Dien Anh 24h */}
             </div>
             <div

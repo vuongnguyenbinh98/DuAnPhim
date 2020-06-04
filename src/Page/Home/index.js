@@ -155,7 +155,7 @@ export default class Home extends Component {
         <div className="container">
           <Cinema />
         </div>
-        <div className="container">
+        <div className="container" id="news">
           <News />
         </div>
         <div className="Footer">

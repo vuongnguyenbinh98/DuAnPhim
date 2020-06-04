@@ -53,5 +53,34 @@
         font-size: 16px;
       }
     }
+    span {
+      i {
+        font-size: 18px;
+        transition: all 0.5s;
+        &:hover {
+          font-size: 20px;
+        }
+      }
+      i:nth-child(2) {
+        margin-left: 20px;
+      }
+    }
+  }
+  .right {
+    margin-top: 30px;
+  }
+  .right1 {
+    img {
+      border-radius: 5px;
+    }
+    p {
+      font-size: 16px;
+      font-weight: 400;
+
+      transition: all 0.5s;
+      &:hover {
+        color: #fa5238;
+      }
+    }
   }
 }
