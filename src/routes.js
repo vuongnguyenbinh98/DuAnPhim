@@ -38,11 +38,17 @@ const routesHome = [
     exact: false,
     component: CinemaDetail,
   },
+  // {
+  //   // path: "/detail-cinemaa/:maCumRap",
+  //   path: "/checkout/:id",
+  //   exact: false,
+  //   component: CinemaCluster,
+  // },
   {
     // path: "/detail-cinemaa/:maCumRap",
     path: "/checkout/:id",
     exact: false,
-    component: CinemaCluster,
+    component: Seat,
   },
   {
     path: "/register",
@@ -54,6 +60,5 @@ const routesHome = [
     exact: false,
     component: Seat,
   },
-
 ];
 export { routesHome };

@@ -101,7 +101,26 @@ class CinemaDetail extends Component {
                           <Link
                             // to={`muaVePhim/${item3.maPhim}`}
                             target="_blank"
-                            to={`/checkout/${item3.maPhim}`}
+                            to={`/seat/${item3.tenPhim}/${
+                              item2.tenCumRap
+                            }/${item3.lstLichChieuTheoPhim.map(
+                              (item4, index, a2) => {
+                                // if (index < 1) {
+                                //   a2.splice(index, 1);
+                                //   return item4.tenRap;
+                                // }
+                                return item4.tenRap;
+                              }
+                            )}/${item3.lstLichChieuTheoPhim.map(
+                              (item5, index, a3) => {
+                                // if (index < 1) {
+                                //   // item5.ngayChieuGioChieu.trim();
+                                //   a3.splice(index + 1);
+                                //   return item5.ngayChieuGioChieu;
+                                // }
+                                return item5.ngayChieuGioChieu;
+                              }
+                            )}`}
                             className="muaVe"
                           >
                             Mua vé
