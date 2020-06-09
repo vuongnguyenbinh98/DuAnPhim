@@ -20,6 +20,13 @@
         }
         .renderRap {
             margin-top: 150px;
+            & .btn-select-seat{
+                color: white;
+                &:hover{
+                    color: white;
+                    text-decoration: none;
+                }
+            }
         }
     }
 }
