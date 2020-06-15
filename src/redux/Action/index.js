@@ -131,3 +131,20 @@ export const actGetListCinema = (listCinema) => {
         data: listCinema,
     };
 };
+//LAY DANH SACH PHONG VE
+export const getRoomTicketAPI = (roomTicketCode) => {
+    return (dispatch) => {
+        Axios({
+            method:"GET",
+            url:`http://movie0706.cybersoft.edu.vn/api/QuanLyDatVe/LayDanhSachPhongVe?MaLichChieu=${roomTicketCode}`
+        }).then((response) => {
+            dispatch({
+                type:ActionType.GET_ROOM_TICKET,
+                data:response.data
+            })
+        }).catch((error) => {
+            console.log(error)
+        })
+    }
+}
+//END LAY DANH SACH PHONG VE

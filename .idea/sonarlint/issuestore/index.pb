@@ -44,3 +44,19 @@ Q
 !src/redux/reducers/FilmReducer.js,6/5/652255a239a79cb8334d6a16a85650b4f664ddbd
 K
 src/Page/Home/DetailFilm.js,7/f/7f2d60f9aa83d5831f56b611897ef3d54c8b8129
+F
+src/Page/Home/Login.js,6/5/652a3a244fcfb9750a06aab20ed2603059b134d6
+k
+;src/Components/Cinema/Cinema-Detail/Cinema-Cluster/index.js,9/5/9529495b44b500b7d97ef6b8a19daf9b1fa340ab
+P
+ src/Components/Seats/styled.scss,8/4/84168461c286612350949e8fbd6cc0b4178bbf66
+H
+src/scss/DetailFilm.scss,2/e/2e3d859b67796d3474bbd40354dca731c7cf29b2
+M
+src/Components/Seats/index.js,3/e/3ecd5a2df3398e5781f88b1e1933340100014f7c
+W
+'src/redux/reducers/RoomTicketReducer.js,4/6/4659e58d90c9fb1affbbacc27c504f84081c2549
+S
+#src/redux/reducers/CinemaReducer.js,5/b/5b6f4fcdc1081e3534da7497af8a8b1195e97162
+Q
+!src/redux/Constants/ActionType.js,e/2/e28e6c2de441731003c6fcd9eeb3f372b9bd6d5f

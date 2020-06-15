@@ -4,7 +4,7 @@ import Login from "./Page/Home/Login";
 import CinemaDetail from "./Components/Cinema/Cinema-Detail";
 import Register from "./Page/Register/Register";
 import CinemaCluster from "./Components/Cinema/Cinema-Detail/Cinema-Cluster";
-import Seat from "./Components/Seat";
+import Seats from "./Components/Seats";
 
 const routesHome = [
   {
@@ -56,9 +56,9 @@ const routesHome = [
     component: Register,
   },
   {
-    path: "/seat/:tenPhim/:cumRap/:tenRap/:ngayChieuGioChieu",
+    path: "/seat/:maLichChieu",
     exact: false,
-    component: Seat,
+    component: Seats,
   },
 ];
 export { routesHome };

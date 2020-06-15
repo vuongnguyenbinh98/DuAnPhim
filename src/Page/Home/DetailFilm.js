@@ -34,7 +34,6 @@ class DetailFilm extends Component {
 
 
     renderLichChieu = () => {
-        console.log(this.state)
         const {film} = this.state;
         console.log(film)
         if (film.lichChieu) {
@@ -48,7 +47,7 @@ class DetailFilm extends Component {
                         <td>
                             <button className="btn btn-success">
                                 <Link className={'btn-select-seat'}
-                                      to={`/seat/${item.tenPhim}/${item.thongTinRap.tenCumRap}/${item.thongTinRap.tenRap}/${item.ngayChieuGioChieu}`}
+                                      to={`/seat/${item.maLichChieu}`}
                                 >
                                     Chọn ghế
                                 </Link>
