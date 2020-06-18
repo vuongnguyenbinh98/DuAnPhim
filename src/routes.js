@@ -44,12 +44,12 @@ const routesHome = [
   //   exact: false,
   //   component: CinemaCluster,
   // },
-  {
-    // path: "/detail-cinemaa/:maCumRap",
-    path: "/checkout/:id",
-    exact: false,
-    component: Seat,
-  },
+  // {
+  //   // path: "/detail-cinemaa/:maCumRap",
+  //   path: "/checkout/:id",
+  //   exact: false,
+  //   component: Seat,
+  // },
   {
     path: "/register",
     exact: false,
