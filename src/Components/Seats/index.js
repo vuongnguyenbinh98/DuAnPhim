@@ -13,7 +13,6 @@ class Seats extends Component {
 
     render() {
         let {tenPhim, tenCumRap, diaChi, tenRap, ngayChieu, gioChieu} = this.props.filmDetail
-        console.log(tenPhim)
         return (
             <div className='wrapper'>
                 <h1>Movie Seat Selection</h1>

@@ -6,7 +6,7 @@ class SeatRow extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            seatList: [],
+            danhSachVe: [],
         }
     }
 
@@ -16,14 +16,8 @@ class SeatRow extends Component {
         } else {
             e.target.style.backgroundColor = 'lightgrey'
         }
-
     }
 
-    // componentDidUpdate(prevProps, prevState) {
-    //     console.log(prevProps)
-    //     console.log(prevState)
-    //     let seatRowGroup = _.chunk(prevProps.SeatList, 16)
-    // }
 
     renderSeatRow = () => {
         let seatRowGroup = _.chunk(this.props.SeatList, 16)
@@ -33,23 +27,16 @@ class SeatRow extends Component {
                     <tr key={index}>
                         <td>{index + 1}</td>
                         {items.map((item) => {
-                            this.state.seatList.push(item)
                             return (<td>
-                                {/*<input onClick={this.handleOnclick}*/}
-                                {/*       style={{*/}
-                                {/*           cursor: `${item.daDat ? 'not-allowed' : 'pointer'}`*/}
-                                {/*       }}*/}
-                                {/*       name={item.tenGhe}*/}
-                                {/*       type="checkbox"*/}
-                                {/*       className="seats"*/}
-                                {/*       value={item.maGhe}/>*/}
                                 <div style={{
                                     backgroundColor: `${item.daDat ? 'red' : 'lightgrey'}`,
-                                    cursor: `${item.daDat ? 'not-allowed' : 'pointer'}`
+                                    pointerEvents: `${item.daDat ? 'none' : 'auto'}`
                                 }}
                                      className={'seat-status'}
-                                     onClick={this.handleOnclick}
-                                     name={item.tenGhe}
+                                     onClick={
+                                         this.handleOnclick
+                                     }
+                                     name='maGhe'
                                      value={item.maGhe}
                                 >
                                 </div>
@@ -59,11 +46,9 @@ class SeatRow extends Component {
                 )
             })
         }
-
     }
 
     render() {
-        // console.log(_.chunk(this.props.SeatList, 16))
         return (
             <React.Fragment>
                 {this.renderSeatRow()}
@@ -72,9 +57,16 @@ class SeatRow extends Component {
     }
 }
 
-const mapStateToProps = (state) => {
-    return {
-        SeatList: state.roomTicketReducer.danhSachGhe
+const
+    mapStateToProps = (state) => {
+        return {
+            SeatList: state.roomTicketReducer.danhSachGhe
+        }
     }
-}
-export default connect(mapStateToProps, null)(SeatRow);
+export default connect(mapStateToProps,
+
+    null
+)(
+    SeatRow
+)
+;
