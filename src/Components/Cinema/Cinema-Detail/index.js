@@ -100,18 +100,23 @@ class CinemaDetail extends Component {
                         <div className="muaVe">
                           <Link
                             target="_blank"
-                            to={`/seat/${item3.tenPhim}/${
-                              item2.tenCumRap
-                            }/${item3.lstLichChieuTheoPhim
-                              .slice(0, 1)
-                              .map((item4, index, a2) => {
-                                return item4.tenRap;
-                              })}/${item3.lstLichChieuTheoPhim
-                              .slice(0, 1)
-                              .map((item5, index, a3) => {
-                                return item5.ngayChieuGioChieu;
-                              })}`}
+                            // to={`/seat/${item3.tenPhim}/${
+                            //   item2.tenCumRap
+                            // }/${item3.lstLichChieuTheoPhim
+                            //   .slice(0, 1)
+                            //   .map((item4, index, a2) => {
+                            //     return item4.tenRap;
+                            //   })}/${item3.lstLichChieuTheoPhim
+                            //   .slice(0, 1)
+                            //   .map((item5, index, a3) => {
+                            //     return item5.ngayChieuGioChieu;
+                            //   })}`}
                             className="muaVe"
+                            to={`/seat/${item3.lstLichChieuTheoPhim
+                              .slice(0, 1)
+                              .map((item4) => {
+                                return item4.maLichChieu;
+                              })}`}
                           >
                             Mua vé
                           </Link>
