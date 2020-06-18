@@ -60,3 +60,7 @@ S
 #src/redux/reducers/CinemaReducer.js,5/b/5b6f4fcdc1081e3534da7497af8a8b1195e97162
 Q
 !src/redux/Constants/ActionType.js,e/2/e28e6c2de441731003c6fcd9eeb3f372b9bd6d5f
+<
+package.json,7/0/7030d0b2f71b999ff89a343de08c414af32fc93a
+U
+%src/Components/Seats/SeatRow/index.js,2/3/23154c181fd5dda005cbf98c797a18b4ebc18e57

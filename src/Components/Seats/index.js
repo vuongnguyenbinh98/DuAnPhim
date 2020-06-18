@@ -54,7 +54,8 @@ class Seats extends Component {
                             </div>
                         </div>
                         <ul className="seat_mbt">
-                            <li className="smallBox redBox">Selected Seat</li>
+                            <li className="smallBox greenBox">Selected Seat</li>
+                            <li className="smallBox redBox">Booked Seat</li>
                             <li className="smallBox emptyBox">Empty Seat</li>
                         </ul>
                         <div className="seatStructure text-center" style={{overflowX: "auto"}}>
