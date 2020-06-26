@@ -233,6 +233,11 @@ export default class News extends Component {
             </div>
           </div>
         </div>
+        <div className="row them">
+          <div className="col-md-3">
+            <button>XEM THÊM</button>
+          </div>
+        </div>
       </div>
     );
   }
