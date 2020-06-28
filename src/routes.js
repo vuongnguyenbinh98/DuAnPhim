@@ -5,6 +5,7 @@ import CinemaDetail from "./Components/Cinema/Cinema-Detail";
 import Register from "./Page/Register/Register";
 import CinemaCluster from "./Components/Cinema/Cinema-Detail/Cinema-Cluster";
 import Seats from "./Components/Seats";
+import Dashboard from "./Page/Admin/Dashboard";
 
 const routesHome = [
   {
@@ -61,4 +62,11 @@ const routesHome = [
     component: Seats,
   },
 ];
-export { routesHome };
+const routesAdmin = [
+  {
+    path: "/admin/dashboard",
+    exact: false,
+    component: Dashboard,
+  },
+];
+export { routesHome, routesAdmin };

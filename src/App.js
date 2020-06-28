@@ -2,12 +2,13 @@ import React, { Component } from "react";
 import "./App.scss";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import HomeTemplate from "./template/HomeTemplate";
-import { routesHome } from "./routes";
+import { routesHome, routesAdmin } from "./routes";
 import PageNotFound from "./Page/PageNotFound";
 
 import { connect } from "react-redux";
 import * as action from "./../src/redux/Action";
 import * as ActionType from "./redux/Constants/ActionType";
+import AdminTemplate from "./template/AdminTemplate";
 
 class App extends Component {
   render() {
@@ -25,11 +26,26 @@ class App extends Component {
         });
       }
     };
+    const showMenuAdmin = (routes) => {
+      if (routes && routes.length > 0) {
+        return routes.map((item, index) => {
+          return (
+            <AdminTemplate
+              key={index}
+              exact={item.exact}
+              path={item.path}
+              Component={item.component}
+            />
+          );
+        });
+      }
+    };
     return (
       <BrowserRouter>
         <div>
           <Switch>
             {showMenuHome(routesHome)}
+            {showMenuAdmin(routesAdmin)}
             <Route path="" component={PageNotFound} />
           </Switch>
         </div>

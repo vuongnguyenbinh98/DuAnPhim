@@ -36,9 +36,17 @@ export const actLoginAPI = (user, history) => {
     })
       .then((rs) => {
         // console.log(rs.data);
-        history.push("/home");
-        localStorage.setItem("credentials", JSON.stringify(rs.data));
-        dispatch(actGetListLogin(rs.data));
+        if (rs.data.maLoaiNguoiDung === "QuanTri") {
+          localStorage.setItem("userAdmin", JSON.stringify(rs.data));
+          history.push("./admin/dashboard");
+          dispatch(actGetListLogin(rs.data));
+        } else if (rs.data.maLoaiNguoiDung === "KhachHang") {
+          history.push("/home");
+          localStorage.setItem("credentials", JSON.stringify(rs.data));
+          dispatch(actGetListLogin(rs.data));
+        } else {
+          alert("Nhap sai tai khoan mat khau");
+        }
       })
       .catch((err) => {
         console.log(err);
