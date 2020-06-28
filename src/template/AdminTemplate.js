@@ -3,12 +3,12 @@ import { Route } from "react-router-dom";
 import { Redirect } from "react-router-dom";
 
 // import Footer from "./../Components/Footer/index";
+import Dashboard from "./../Page/Admin/Dashboard";
 
 const AdminLayout = (props) => {
   return (
     <div>
-      <div>NAVBAR ADMIN</div>
-
+      <Dashboard />
       {props.children}
       {/* <Footer /> */}
     </div>
