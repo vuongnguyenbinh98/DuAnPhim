@@ -6,6 +6,7 @@ import Register from "./Page/Register/Register";
 import CinemaCluster from "./Components/Cinema/Cinema-Detail/Cinema-Cluster";
 import Seats from "./Components/Seats";
 import Dashboard from "./Page/Admin/Dashboard";
+import ThemNguoiDung from "./Page/Admin/ThemNguoiDung";
 
 const routesHome = [
   {
@@ -67,6 +68,11 @@ const routesAdmin = [
     path: "/admin/dashboard",
     exact: false,
     component: Dashboard,
+  },
+  {
+    path: "/admin/them-nguoi-dung",
+    exact: false,
+    component: ThemNguoiDung,
   },
 ];
 export { routesHome, routesAdmin };
