@@ -42,7 +42,7 @@ export const actResgisterUser = (user) => {
     };
 };
 export const logout = () => {
-<<<<<<< HEAD
+
   return (dispatch) => {
     if (localStorage.getItem("credentials")) {
       localStorage.removeItem("credentials");
@@ -53,12 +53,12 @@ export const logout = () => {
 
     dispatch(actGetListLogin(null));
   };
-=======
+
     return (dispatch) => {
         localStorage.removeItem("credentials");
         dispatch(actGetListLogin(null));
     };
->>>>>>> update component
+
 };
 
 export const actLoginAPI = (user, history) => {

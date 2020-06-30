@@ -140,7 +140,7 @@ class Seats extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        filmDetail: state.FilmReducer.detailFilm,
+        filmDetail: state.roomTicketReducer.thongTinPhim,
         user: state.UserReducer.credentials,
         isBookingSuccess: state.roomTicketReducer.isBookingSuccess
     }
