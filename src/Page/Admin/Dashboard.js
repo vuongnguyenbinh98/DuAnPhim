@@ -41,7 +41,7 @@ export default class Dashboard extends Component {
                   <ul className="navbar-nav flex-column mt-4">
                     <li className="nav-item">
                       <NavLink
-                        to="/admin/dashboard"
+                        to="/admin/index"
                         className="nav-link text-white p-3 mb-2 sidebar-link current"
                       >
                         <i className="fa fa-home text-light fa-lg mr-3">

@@ -7,6 +7,7 @@ import CinemaCluster from "./Components/Cinema/Cinema-Detail/Cinema-Cluster";
 import Seats from "./Components/Seats";
 import Dashboard from "./Page/Admin/Dashboard";
 import ThemNguoiDung from "./Page/Admin/ThemNguoiDung";
+import HomeAdmin from "./Page/Admin/index";
 
 const routesHome = [
   {
@@ -73,6 +74,11 @@ const routesAdmin = [
     path: "/admin/them-nguoi-dung",
     exact: false,
     component: ThemNguoiDung,
+  },
+  {
+    path: "/admin/index",
+    exact: false,
+    component: HomeAdmin,
   },
 ];
 export { routesHome, routesAdmin };

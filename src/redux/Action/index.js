@@ -38,7 +38,7 @@ export const actLoginAPI = (user, history) => {
         // console.log(rs.data);
         if (rs.data.maLoaiNguoiDung === "QuanTri") {
           localStorage.setItem("userAdmin", JSON.stringify(rs.data));
-          history.push("./admin/dashboard");
+          history.push("./admin/index");
           dispatch(actGetListLogin(rs.data));
         } else if (rs.data.maLoaiNguoiDung === "KhachHang") {
           history.push("/home");
