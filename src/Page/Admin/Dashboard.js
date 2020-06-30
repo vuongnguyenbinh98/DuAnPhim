@@ -2,8 +2,14 @@ import React, { Component } from "react";
 import "./../../scss/Dashboard.scss";
 import { NavLink, Link } from "react-router-dom";
 import ThemNguoiDung from "./ThemNguoiDung";
+import { connect } from "react-redux";
+import * as action from "./../../redux/Action/index";
 
-export default class Dashboard extends Component {
+class Dashboard extends Component {
+  handleLocalDangXuat = (e) => {
+    // e.preventDefault();
+    this.props.logout();
+  };
   render() {
     return (
       <>
@@ -35,7 +41,14 @@ export default class Dashboard extends Component {
                       className="rounded-circle mr-3"
                     />
                     <a href="#" className="text-white">
-                      Helen Smith
+                      {this.props.credentials ? (
+                        <>
+                          Hi{" "}
+                          <span className="text-danger">
+                            {this.props.credentials.hoTen}
+                          </span>
+                        </>
+                      ) : null}
                     </a>
                   </div>
                   <ul className="navbar-nav flex-column mt-4">
@@ -84,8 +97,8 @@ export default class Dashboard extends Component {
                         to="/admin/them-nguoi-dung"
                         className="nav-link text-white p-3 mb-2 sidebar-link "
                       >
-                        <i className="fa fa-chart-line text-light fa-lg mr-3">
-                          <span className="ml-3">Thêm người dùng</span>
+                        <i class="fa fa-address-book text-light fa-lg mr-3">
+                          <span className="ml-3">Add User</span>
                         </i>
                       </NavLink>
                     </li>
@@ -170,14 +183,19 @@ export default class Dashboard extends Component {
                           </a>
                         </li>
                         <li className="nav-item ml-md-auto">
+                          {/* nut thoat */}
                           <NavLink
                             to="/"
                             className="nav-link"
                             // data-toggle="modal"
                             // data-target="#sign-out"
                           >
-                            <i className="fa fa-sign-out text-danger  fa-lg"></i>
+                            <i
+                              onClick={this.handleLocalDangXuat.bind(this)}
+                              className="fa fa-sign-out text-danger  fa-lg"
+                            ></i>
                           </NavLink>
+                          {/* end nut thoat */}
                         </li>
                       </ul>
                     </div>
@@ -226,3 +244,16 @@ export default class Dashboard extends Component {
     );
   }
 }
+const mapStateToProps = (state) => {
+  return {
+    credentials: state.UserReducer.credentials,
+  };
+};
+const mapDispatchToProps = (dispatch) => {
+  return {
+    logout: () => {
+      dispatch(action.logout());
+    },
+  };
+};
+export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);

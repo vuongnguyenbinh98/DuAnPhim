@@ -1,6 +1,27 @@
 import Axios from "axios";
 import * as ActionType from "../Constants/ActionType";
 
+export const actThemNguoiDungAPI = (user) => {
+  const userAdmin = JSON.parse(localStorage.getItem("userAdmin"));
+  return (dispatch) => {
+    Axios({
+      method: "POST",
+      url:
+        "http://movie0706.cybersoft.edu.vn/api/QuanLyNguoiDung/ThemNguoiDung",
+      data: user,
+      headers: {
+        Authorization: `Bearer  ${userAdmin.accessToken}`,
+      },
+    })
+      .then((result) => {
+        console.log(result.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+};
+
 export const actResgisterUser = (user) => {
   // const userRegister = JSON.parse(localStorage.getItem("userAdmin"));
   return (dispatch) => {
@@ -22,7 +43,13 @@ export const actResgisterUser = (user) => {
 };
 export const logout = () => {
   return (dispatch) => {
-    localStorage.removeItem("credentials");
+    if (localStorage.getItem("credentials")) {
+      localStorage.removeItem("credentials");
+    }
+    if (localStorage.getItem("userAdmin")) {
+      localStorage.removeItem("userAdmin");
+    }
+
     dispatch(actGetListLogin(null));
   };
 };
