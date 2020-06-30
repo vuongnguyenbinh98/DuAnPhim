@@ -1,13 +1,41 @@
 import React, {Component} from 'react';
 import './styled.scss'
 import {connect} from "react-redux";
-import {actGetDetailMovieAPI, getRoomTicketAPI} from "../../redux/Action";
+import {actGetDetailMovieAPI, getRoomTicketAPI, actBookingTicket} from "../../redux/Action";
 import SeatRow from "./SeatRow";
 
 class Seats extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            orderedTicket: {},
+            getRoomTicket: () => {
+                const {maLichChieu} = this.props.match.params;
+                this.props.getRoomTicket(maLichChieu)
+            }
+        }
+    }
+
     componentDidMount() {
-        const {maLichChieu} = this.props.match.params;
-        this.props.getRoomTicket(maLichChieu)
+        this.state.getRoomTicket()
+    }
+
+
+    setOrderedTicket = (state) => {
+        this.setState({
+            orderedTicket: state
+        }, () => {
+        })
+    }
+    handleOnclick = () => {
+        this.props.actBookingTicket(this.state.orderedTicket, this.props.user.accessToken)
+    }
+
+
+    UNSAFE_componentWillReceiveProps(nextProps) {
+        if (nextProps.isBookingSuccess) {
+            this.state.getRoomTicket()
+        }
     }
 
 
@@ -33,7 +61,6 @@ class Seats extends Component {
                                                 <b>Địa chi: </b><span>{diaChi}</span>
                                             </div>
                                         </div>
-
                                     </li>
                                     <li className="list-group-item">
                                         <b>Tên rạp: </b><span>{tenRap}</span>
@@ -62,7 +89,8 @@ class Seats extends Component {
                                 <h2 className="wthree">Screen this way</h2>
                             </div>
                             <table id="seatsBlock" className='w-100'>
-                                <p id="notification"></p>
+                                <thead style={{background: 'none'}}>
+                                {/*<p id="notification"></p>*/}
                                 <tr className='column-number'>
                                     <td></td>
                                     <td>A</td>
@@ -82,9 +110,25 @@ class Seats extends Component {
                                     <td>O</td>
                                     <td>P</td>
                                 </tr>
-                                <SeatRow/>
+                                </thead>
+                                <tbody>
+                                {/*{(this.props.isBookingSuccess === true || this.props.isBookingSuccess === false)*/}
+                                {/*    ? <SeatRow orderedTicket={(state) => {*/}
+                                {/*        this.setOrderedTicket(state)*/}
+                                {/*    }}/>*/}
+                                {/*    : <SeatRow orderedTicket={(state) => {*/}
+                                {/*        this.setOrderedTicket(state)*/}
+                                {/*    }}/>}*/}
+                                {this.state.isBookingSuccess !== '' ? <SeatRow orderedTicket={(state) => {
+                                    this.setOrderedTicket(state)
+                                }}/> : null}
+
+
+                                </tbody>
                             </table>
-                            <button type="button" className="btn btn-success my-3">Xác nhận đặt vé</button>
+                            <button onClick={this.handleOnclick} type="button" className="btn btn-success my-3">Xác nhận
+                                đặt vé
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -96,7 +140,9 @@ class Seats extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        filmDetail: state.roomTicketReducer.thongTinPhim,
+        filmDetail: state.FilmReducer.detailFilm,
+        user: state.UserReducer.credentials,
+        isBookingSuccess: state.roomTicketReducer.isBookingSuccess
     }
 }
 const mapDispatchToProps = (dispatch) => {
@@ -106,6 +152,9 @@ const mapDispatchToProps = (dispatch) => {
         },
         getRoomTicket: (roomTicketCode) => {
             dispatch(getRoomTicketAPI(roomTicketCode))
+        },
+        actBookingTicket: (bookingInfo, accessToken) => {
+            dispatch(actBookingTicket(bookingInfo, accessToken))
         }
     }
 }
