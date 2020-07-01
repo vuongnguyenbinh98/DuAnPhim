@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./../../scss/indexAdmin.scss";
 import TableAdmin from "./../../Components/TableAdmin/tableAdmin";
+import Progress from "./../../Components/Progress/index";
 export default class HomeAdmin extends Component {
   render() {
     return (
@@ -88,6 +89,7 @@ export default class HomeAdmin extends Component {
           </div>
         </section>
         <TableAdmin />
+        <Progress />
       </>
     );
   }
