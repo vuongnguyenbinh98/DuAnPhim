@@ -64,3 +64,5 @@ Q
 package.json,7/0/7030d0b2f71b999ff89a343de08c414af32fc93a
 U
 %src/Components/Seats/SeatRow/index.js,2/3/23154c181fd5dda005cbf98c797a18b4ebc18e57
+Q
+!src/redux/reducers/UserReducer.js,a/a/aa58d9ff534a6e89f66e220d6e2e27b1b60d24f3
