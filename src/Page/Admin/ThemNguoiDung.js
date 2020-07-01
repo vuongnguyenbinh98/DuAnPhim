@@ -26,6 +26,9 @@ class ThemNguoiDung extends Component {
     console.log(this.state);
     this.props.addUser(this.state);
   };
+  componentDidMount() {
+    this.props.getLoaiNguoiDung();
+  }
   render() {
     return (
       <section>
@@ -87,12 +90,26 @@ class ThemNguoiDung extends Component {
                     />
                   </div>
                   <div className="form-group">
-                    <span>Mã loại người dùng</span>
-                    <input
+                    <span>Mã loại người dùng</span>{" "}
+                    <select className="form-control">
+                      {this.props.loai.map((item) => {
+                        return (
+                          <>
+                            <option
+                              name="maLoaiNguoiDung"
+                              onChange={this.handleOnchange}
+                            >
+                              {item.maLoaiNguoiDung}
+                            </option>
+                          </>
+                        );
+                      })}{" "}
+                    </select>
+                    {/* <input
                       className="form-control"
                       name="maLoaiNguoiDung"
                       onChange={this.handleOnchange}
-                    />
+                    /> */}
                   </div>
                   <div className="form-group">
                     <button type="submit" className="btn btn-success">
@@ -112,11 +129,19 @@ class ThemNguoiDung extends Component {
     );
   }
 }
+const mapStateToProps = (state) => {
+  return {
+    loai: state.UserReducer.loaiNguoiDung,
+  };
+};
 const mapDispatchToProps = (dispatch) => {
   return {
     addUser: (user) => {
       dispatch(action.actThemNguoiDungAPI(user));
     },
+    getLoaiNguoiDung: () => {
+      dispatch(action.actGetLoaiNguoiDUngAPI());
+    },
   };
 };
-export default connect(null, mapDispatchToProps)(ThemNguoiDung);
+export default connect(mapStateToProps, mapDispatchToProps)(ThemNguoiDung);
