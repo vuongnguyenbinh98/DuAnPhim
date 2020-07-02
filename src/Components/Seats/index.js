@@ -3,7 +3,7 @@ import './styled.scss'
 import {connect} from "react-redux";
 import {actGetDetailMovieAPI, getRoomTicketAPI, actBookingTicket} from "../../redux/Action";
 import SeatRow from "./SeatRow";
-
+import {withRouter} from 'react-router-dom'
 class Seats extends Component {
     constructor(props) {
         super(props);
@@ -12,7 +12,8 @@ class Seats extends Component {
             getRoomTicket: () => {
                 const {maLichChieu} = this.props.match.params;
                 this.props.getRoomTicket(maLichChieu)
-            }
+            },
+            accessToken: '',
         }
     }
 
@@ -28,7 +29,12 @@ class Seats extends Component {
         })
     }
     handleOnclick = () => {
-        this.props.actBookingTicket(this.state.orderedTicket, this.props.user.accessToken)
+        let {orderedTicket, accessToken} = this.state
+        if (orderedTicket && accessToken) {
+            this.props.actSubmitBooking(this.state.orderedTicket, this.props.user.accessToken)
+        } else {
+            this.props.history.push('/dang-nhap')
+        }
     }
 
 
@@ -36,6 +42,15 @@ class Seats extends Component {
         if (nextProps.isBookingSuccess) {
             this.state.getRoomTicket()
         }
+        // if (nextProps.user.accessToken !== '') {
+        //     this.setState({
+        //         accessToken: nextProps.user.accessToken
+        //     })
+        // } else {
+        //     this.setState({
+        //         accessToken: ''
+        //     })
+        // }
     }
 
 
@@ -112,18 +127,9 @@ class Seats extends Component {
                                 </tr>
                                 </thead>
                                 <tbody>
-                                {/*{(this.props.isBookingSuccess === true || this.props.isBookingSuccess === false)*/}
-                                {/*    ? <SeatRow orderedTicket={(state) => {*/}
-                                {/*        this.setOrderedTicket(state)*/}
-                                {/*    }}/>*/}
-                                {/*    : <SeatRow orderedTicket={(state) => {*/}
-                                {/*        this.setOrderedTicket(state)*/}
-                                {/*    }}/>}*/}
                                 {this.state.isBookingSuccess !== '' ? <SeatRow orderedTicket={(state) => {
                                     this.setOrderedTicket(state)
                                 }}/> : null}
-
-
                                 </tbody>
                             </table>
                             <button onClick={this.handleOnclick} type="button" className="btn btn-success my-3">Xác nhận
@@ -158,4 +164,4 @@ const mapDispatchToProps = (dispatch) => {
         }
     }
 }
-export default connect(mapStateToProps, mapDispatchToProps)(Seats);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Seats));
