@@ -55,11 +55,18 @@ class App extends Component {
   _getCredentialsFormLocal = () => {
     const credentialsStr = localStorage.getItem("credentials");
     // console.log(credentialsStr);
+    const credentialsStrAdmin = localStorage.getItem("userAdmin");
     if (credentialsStr) {
       // this.props.dispatch(action.actLoginAPI(JSON.parse(credentialsStr)));
       this.props.dispatch({
         type: ActionType.GET_LIST_LOGIN,
         data: JSON.parse(credentialsStr),
+      });
+    }
+    if (credentialsStrAdmin) {
+      this.props.dispatch({
+        type: ActionType.GET_LIST_LOGIN,
+        data: JSON.parse(credentialsStrAdmin),
       });
     }
   };
